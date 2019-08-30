@@ -9,9 +9,9 @@ This is an API based backend code, for running the app on container follow the s
 1. Clone the repo
 2. Build the image from the dockerfile in the current directory by running the command "docker build --tag downloader_app ."
 3. Launch a container from the build image by running the command "docker run --detach -ti -p 80:8000 downloader_app"
-4. HOSTNAME/download?url=url_of_the_file e.g. https://readthedocs.org/projects/django/downloads/pdf/latest/
+4. Now using POSTMAN or browser enter HOSTNAME/download?url=url_of_the_file, example of the Redirect URL is: https://readthedocs.org/projects/django/downloads/pdf/latest/
    - In response will get the unique id.
-5. HOSTNAME/status?id=unique_id
+5. Again enter HOSTNAME/status?id=unique_id
    - In responce will get the status of the download
    - e.g. {
             "Total file size": "1651264 Bytes"
