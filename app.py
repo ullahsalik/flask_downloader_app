@@ -70,7 +70,7 @@ def get_download_details():
         return(jsonify({'error': 'Unable to find the download with particular id'}))
 
 if __name__ == '__main__':
-    application.run(host="0.0.0.0", port=8000)
+    application.run(host="0.0.0.0", port=80)
 
 
 # I am not using any db for now for storing the details of the download
