@@ -23,7 +23,8 @@ def file_download(url, file_name, id):
 # IP/download?url=enter_url
 @application.route('/download', methods=['GET'])
 def main():
-    url = request.args.get('url')
+    r = requests.get(request.args.get('url'), allow_redirects=True)  # to get content after redirection
+    url = r.url # 'https://media.readthedocs.org/pdf/django/latest/dj
     id = str(uuid.uuid4().hex[:5])
     header = requests.head(url, allow_redirects=True).headers
     try:
@@ -69,7 +70,7 @@ def get_download_details():
         return(jsonify({'error': 'Unable to find the download with particular id'}))
 
 if __name__ == '__main__':
-    application.run(host="0.0.0.0", port=80)
+    application.run(host="0.0.0.0", port=8000)
 
 
 # I am not using any db for now for storing the details of the download
